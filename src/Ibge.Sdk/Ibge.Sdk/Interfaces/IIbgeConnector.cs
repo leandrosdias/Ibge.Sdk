@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace Ibge.Sdk.Interfaces
 {
-    interface IIbgeConnector
+    public interface IIbgeConnector
     {
-        Task<string> GetClientResponseAsync(string args);
+        Task<string> GetClientResponseAsync(string args, string uri = "");
     }
 }

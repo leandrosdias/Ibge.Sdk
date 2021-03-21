@@ -3,6 +3,7 @@
     public enum IbgeApis
     {
         Locations,
-        Names
+        Names,
+        NamesRanking
     }
 }

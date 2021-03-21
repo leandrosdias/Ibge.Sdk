@@ -20,6 +20,7 @@ namespace Ibge.Sdk.Services
             {
                 IbgeApis.Locations => "localidades/",
                 IbgeApis.Names => "censos/nomes/",
+                IbgeApis.NamesRanking => "censos/nomes/ranking/",
                 _ => throw new System.NotImplementedException()
             };
         }

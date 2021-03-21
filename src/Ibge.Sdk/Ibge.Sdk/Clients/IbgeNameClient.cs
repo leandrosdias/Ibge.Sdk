@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ibge.Sdk.Clients
 {
-    class IbgeNameClient
+    public class IbgeNameClient
     {
         private readonly IIbgeConnector _connector;
         public IbgeNameClient(IIbgeConnector connector)
@@ -20,10 +20,16 @@ namespace Ibge.Sdk.Clients
             _connector = IbgeConnectorFactory.GetIbgeConnector(Enums.IbgeApis.Names);
         }
 
-        public async Task<IEnumerable<Name>> GetNamesAsync(List<string> names)
+        public async Task<IEnumerable<NameResult>> GetNamesAsync(List<string> names)
         {
             var result = await _connector.GetClientResponseAsync(string.Join("|", names));
-            return JsonSerializer.Deserialize<IEnumerable<Name>>(result);
+            return JsonSerializer.Deserialize<IEnumerable<NameResult>>(result);
+        }
+
+        public async Task<List<NameResult>> GetNamesByRankingAsync()
+        {
+            var result = await _connector.GetClientResponseAsync(string.Empty, "ranking/");
+            return JsonSerializer.Deserialize<List<NameResult>>(result);
         }
     }
 }

@@ -2,7 +2,6 @@
 using Ibge.Sdk.Interfaces;
 using Ibge.Sdk.Models;
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -10,7 +9,7 @@ namespace Ibge.Sdk.Services
 {
     public class IbgeConnector : IIbgeConnector, IDisposable
     {
-        private HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
         public IbgeConnector(string api, string urlBase = "")
         {
             if (string.IsNullOrWhiteSpace(urlBase))
@@ -22,9 +21,14 @@ namespace Ibge.Sdk.Services
             _httpClient = HttpClientFactory.GetClient(endpoint);
         }
 
-        public async Task<string> GetClientResponseAsync(string args)
+        public async Task<string> GetClientResponseAsync(string args, string sufixUrl = "")
         {
-            var response = await _httpClient.GetAsync(args);
+            if (!string.IsNullOrWhiteSpace(sufixUrl))
+            {
+                var url = _httpClient.BaseAddress.AbsoluteUri + sufixUrl;
+                _httpClient.BaseAddress = new Uri(url);
+            }
+            var response = await _httpClient.GetAsync(args).ConfigureAwait(true);
             var responseContent = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
                 return responseContent;
