@@ -1,0 +1,28 @@
+name: dotnet-5
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    env:
+      CAMINHO_PROJETO_TESTES: ./src/Ibge.Sdk/Ibge.Sdk.Tests/Ibge.Sdk.Tests.csproj
+      CAMINHO_PROJETO_WEBAPP: ./src/Ibge.Sdk
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup dotnet-5
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.100-rc.2.20479.15
+    - name: Install dependencies
+      run: dotnet restore ${{ env.CAMINHO_PROJETO_WEBAPP }}
+    - name: Build
+      run: dotnet build ${{ env.CAMINHO_PROJETO_WEBAPP }} --configuration Release --no-restore
+    - name: Test
+      run: dotnet test ${{ env.CAMINHO_PROJETO_TESTES }} --no-restore --verbosity minimal
