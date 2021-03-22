@@ -14,7 +14,7 @@ namespace Ibge.Sdk.Services
         {
             if (string.IsNullOrWhiteSpace(urlBase))
             {
-                urlBase = $"https://servicodados.ibge.gov.br/api/v2/";
+                urlBase = $"https://servicodados.ibge.gov.br/api/";
             }
 
             var endpoint = urlBase + api;

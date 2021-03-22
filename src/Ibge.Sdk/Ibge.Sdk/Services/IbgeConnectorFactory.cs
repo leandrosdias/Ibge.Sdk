@@ -18,9 +18,9 @@ namespace Ibge.Sdk.Services
         {
             return api switch
             {
-                IbgeApis.Locations => "localidades/",
-                IbgeApis.Names => "censos/nomes/",
-                IbgeApis.NamesRanking => "censos/nomes/ranking/",
+                IbgeApis.Locations => "v1/localidades/",
+                IbgeApis.Names => "v2/censos/nomes/",
+                IbgeApis.NamesRanking => "v2/censos/nomes/ranking/",
                 _ => throw new System.NotImplementedException()
             };
         }
