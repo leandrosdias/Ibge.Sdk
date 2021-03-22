@@ -1,8 +1,8 @@
 # Ibge.Sdk
-Biblioteca criada com o objetivo de facilitar o consumos das APIs públicas do IBGE
+Biblioteca criada com o objetivo de facilitar o consumos das APIs públicas do Ibge
 
 [![License](https://img.shields.io/github/license/leandrosdias/Ibge.Sdk.svg)](LICENSE)
-[![Issues open](https://img.shields.io/github/issues/leandrosdias/Ibge.Sdk.svg)]
+[![Issues open](https://img.shields.io/github/issues/leandrosdias/Ibge.Sdk.svg)](https://github.com/leandrosdias/qnamaker.Helpers/)
 
 ## Dependências
 .NET Started 2.0
