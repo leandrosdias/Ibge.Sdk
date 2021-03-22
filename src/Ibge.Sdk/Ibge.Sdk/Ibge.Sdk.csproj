@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>icon.png</PackageIcon>
+    <Authors>Leandro Siqueira Dias</Authors>
+    <Company />
+    <Description>SDK para acesso às APIs do Instituto Brasileiro de Geografia e Estatística</Description>
+    <RepositoryUrl>https://github.com/leandrosdias/Ibge.Sdk</RepositoryUrl>
+    <PackageTags>IBGE</PackageTags>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
