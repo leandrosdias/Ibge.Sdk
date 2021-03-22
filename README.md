@@ -5,16 +5,23 @@ Biblioteca criada com o objetivo de facilitar o consumos das APIs públicas do I
 [![Issues open](https://img.shields.io/github/issues/leandrosdias/Ibge.Sdk.svg)](https://github.com/leandrosdias/Ibge.Sdk/issues)
 
 ## Dependências
-.NET Started 2.0
+.NET 5
 
-Supported frameworks: [https://docs.microsoft.com/pt-br/dotnet/standard/net-standard](https://docs.microsoft.com/pt-br/dotnet/standard/net-standard)
+Supported frameworks: [https://docs.microsoft.com/pt-br/dotnet/core/dotnet-five](https://docs.microsoft.com/pt-br/dotnet/core/dotnet-five)
 
 ## Instalação / Inicio Rápido
 
+Essa biblioteca está disponível no pacote Nuget: [https://www.nuget.org/packages/Ibge.Sdk/](https://www.nuget.org/packages/Ibge.Sdk/)
 
 #### Nuget
+```
+Install-Package Ibge.Sdk -Version 1.0.0
+```
 
 #### .NET CLI
+```
+dotnet add package Ibge.Sdk --version 1.0.2
+```
 
 ## Como usar
 
